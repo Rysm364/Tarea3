@@ -178,13 +178,6 @@ int main() {
     center.execute("damage", {"7"});
     center.execute("status", {});
 
-    // comandos invalidos
-    center.execute("heal", {});
-    center.execute("heal", {"a"});
-    center.execute("move", {"1"});
-    center.execute("move", {"x", "y"});
-    center.execute("fake", {});
-
     center.registerMacro("combo1", {
         {"heal", {"5"}},
         {"move", {"1", "1"}},
@@ -211,6 +204,14 @@ int main() {
 
     center.removeCommand("heal");
     center.execute("heal", {"10"});
+
+    cout << "----Comandos Invalidos----" << endl;
+    center.execute("heal", {});
+    center.execute("heal", {"a"});
+    center.execute("move", {"1"});
+    center.execute("move", {"x", "y"});
+    center.execute("fake", {});
+    cout << "------------------------" << endl;
 
     return 0;
 }
